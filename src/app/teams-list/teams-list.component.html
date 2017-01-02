@@ -1,0 +1,12 @@
+<ul class="collection with-header">
+    <li class="collection-header"><h4>NHL Teams</h4></li>
+    <li class="collection-item avatar" *ngFor="let team of teams | async">
+        <img [src]="domSanitizationService.bypassSecurityTrustResourceUrl(team.image)" alt="" class="circle team-logo">
+        <span class="title">{{team.name}}</span>
+        <p>{{team.conference}} <br>
+            {{team.division}}
+        </p>
+        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+    </li>
+</ul>
+

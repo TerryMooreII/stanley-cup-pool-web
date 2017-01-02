@@ -1,0 +1,18 @@
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper blue darken-2">
+            <a materialize="sideNav" [materializeParams]="[{edge:'left', closeOnClick:true, draggable:true}]" href="#" data-activates="slide-out"
+               class="button-collapse show-on-large"><i class="material-icons">view_headline</i></a>
+
+            <a href="#!" class="brand-logo">Stanley Cup Pool</a>
+        </div>
+    </nav>
+</div>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+
+
+
+<scp-sidebar-nav></scp-sidebar-nav>
+
