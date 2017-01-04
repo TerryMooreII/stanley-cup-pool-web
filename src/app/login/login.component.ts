@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
                 this.currentUserService.setContext(data);
                 this.router.navigate(['/']);
 
+
             }, err => this.isError = true);
     }
 

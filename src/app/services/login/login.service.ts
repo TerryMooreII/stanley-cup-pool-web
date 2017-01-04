@@ -17,4 +17,8 @@ export class LoginService {
 
     }
 
+    logout(user){
+        this.http.post(this.url + '/logout', user);
+    }
+
 }

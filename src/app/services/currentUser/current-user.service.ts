@@ -5,16 +5,19 @@ import {User} from "../../models/user";
 @Injectable()
 export class CurrentUserService {
 
-    private _isLoggedIn:Boolean = false;
+    private _isLoggedIn: Boolean = false;
 
-    private currentUser$:BehaviorSubject<User>;
+    private currentUser$: BehaviorSubject<User>;
 
     constructor() {
-        this.currentUser$ = new BehaviorSubject(new User({}));
+        let ls = localStorage.getItem('current-user');
+        let user = ls ? JSON.parse(ls) : {};
+        this.currentUser$ = new BehaviorSubject(new User(user));
     }
 
-    setContext (user){
+    setContext(user) {
         this._isLoggedIn = true;
+        localStorage.setItem('current-user', JSON.stringify(user));
         this.currentUser$.next(new User(user));
     }
 
@@ -22,8 +25,12 @@ export class CurrentUserService {
         return this.currentUser$.asObservable();
     }
 
-    isLoggedIn(){
+    isLoggedIn() {
         return this._isLoggedIn;
+    }
+
+    logout(){
+        localStorage.removeItem('current-user');
     }
 
 }
