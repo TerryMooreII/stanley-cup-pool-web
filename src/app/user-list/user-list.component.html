@@ -1,0 +1,16 @@
+<ul class="collection with-header">
+    <li class="collection-header">
+        <a class="btn-floating btn-large waves-effect waves-light red right" routerLink="/users/new"><i
+            class="material-icons">add</i></a>
+        <h4>Users</h4>
+
+    </li>
+    <li class="collection-header" *ngIf="users.length === 0"><h6>No Results</h6></li>
+    <li class="collection-item cursor-pointer" *ngFor="let user of users" (click)="edit(user)">
+        <span class="secondary-content">{{user.email}}</span>
+        <span class="title">{{user.first}} {{user.last}}</span>
+        <!--<p>-->
+        <!--<span class="chip" *ngFor="let member of league.members">{{member.first}} {{member.last}}</span>-->
+        <!--</p>-->
+    </li>
+</ul>

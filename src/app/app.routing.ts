@@ -4,6 +4,10 @@ import {MainComponent} from "./main/main.component";
 import {LoginComponent} from "./login/login.component";
 import {IsLoggedInGuard} from "./services/guards/is-logged-in.service";
 import {TeamsListComponent} from "./teams-list/teams-list.component";
+import {LeagueListComponent} from "./league-list/league-list.component";
+import {LeagueEditComponent} from "./league-edit/league-edit.component";
+import {UserListComponent} from "./user-list/user-list.component";
+import {UserEditComponent} from "./user-edit/user-edit.component";
 
 export const routes: Routes = [
     {
@@ -11,7 +15,13 @@ export const routes: Routes = [
         component: MainComponent,
         canActivate: [IsLoggedInGuard],
         children: [
-             {path: 'teams-list', component: TeamsListComponent},
+            {path: 'teams', component: TeamsListComponent},
+            {path: 'leagues', component: LeagueListComponent},
+            {path: 'leagues/new', component: LeagueEditComponent},
+            {path: 'leagues/:id', component: LeagueEditComponent},
+            {path: 'users', component: UserListComponent},
+            {path: 'users/new', component: UserEditComponent},
+            {path: 'users/:id', component: UserEditComponent},
         ]
     },
     {

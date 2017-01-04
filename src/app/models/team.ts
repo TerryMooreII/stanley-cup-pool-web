@@ -1,13 +1,13 @@
 export class Team {
 
-    name:String;
-    abbreviation:String;
-    teamname:String;
-    shortName:String;
-    division:String;
-    conference:String;
-    image:String;
-    isActive:Boolean;
+    name:string;
+    abbreviation:string;
+    teamname:string;
+    shortName:string;
+    division:string;
+    conference:string;
+    image:string;
+    isActive:boolean;
 
     constructor(team){
         if (!team) return;

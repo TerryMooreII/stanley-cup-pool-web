@@ -1,0 +1,16 @@
+<ul class="collection with-header">
+    <li class="collection-header">
+        <a class="btn-floating btn-large waves-effect waves-light red right" routerLink="/leagues/new"><i
+            class="material-icons">add</i></a>
+        <h4>Leagues</h4>
+
+    </li>
+    <li class="collection-header" *ngIf="leagues.length === 0"><h6>No Results</h6></li>
+    <li class="collection-item cursor-pointer" *ngFor="let league of leagues" (click)="edit(league)">
+        <span class="secondary-content">{{league.year}}</span>
+        <span class="title">{{league.name}}</span>
+        <p>
+            <span class="chip" *ngFor="let member of league.members">{{member.first}} {{member.last}}</span>
+        </p>
+    </li>
+</ul>

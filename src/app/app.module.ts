@@ -15,6 +15,12 @@ import {TeamService} from "./services/team/team.service";
 import { TeamsListComponent } from './teams-list/teams-list.component';
 import { SidebarNavComponent } from './sidebar-nav/sidebar-nav.component';
 import {DefaultRequestOptions} from "./services/default-request-options/default-request-options.service";
+import { LeagueListComponent } from './league-list/league-list.component';
+import {LeagueService} from "./services/league/league.service";
+import { LeagueEditComponent } from './league-edit/league-edit.component';
+import {UserService} from "./services/user/user.service";
+import { UserListComponent } from './user-list/user-list.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +28,11 @@ import {DefaultRequestOptions} from "./services/default-request-options/default-
     LoginComponent,
     MainComponent,
     TeamsListComponent,
-    SidebarNavComponent
+    SidebarNavComponent,
+    LeagueListComponent,
+    LeagueEditComponent,
+    UserListComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +43,8 @@ import {DefaultRequestOptions} from "./services/default-request-options/default-
   ],
   providers: [
       {provide: RequestOptions, useClass: DefaultRequestOptions },
+      LeagueService,
+      UserService,
       LoginService,
       TeamService,
       CurrentUserService,

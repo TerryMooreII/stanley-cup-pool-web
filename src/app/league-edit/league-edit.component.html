@@ -1,0 +1,72 @@
+<div class="row">
+    <form class="col s12" (ngSubmit)="save()" #leagueForm="ngForm">
+        <div class="row">
+            <h4>League Info</h4>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input placeholder="" id="name" type="text" class="validate" name="name" [(ngModel)]="league.name" required>
+                <label for="name">League Name</label>
+            </div>
+            <div class="input-field col s6">
+                <select [(ngModel)]="league.year" name="seasons" materialize="material_select"
+                        [materializeSelectOptions]="seasons">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option *ngFor="let season of seasons" [value]="season">{{season}}</option>
+                </select>
+                <label>Season</label>
+            </div>
+        </div>
+        <div class="row">
+            <h4>Points</h4>
+        </div>
+        <div class="row">
+            <div class="input-field  col s6">
+                <select name="round-one-points" [(ngModel)]="league.points['one']" materialize="material_select"
+                        [materializeSelectOptions]="points">
+                    <option value="" disabled selected>Correct Pick</option>
+                    <option *ngFor="let point of points" [value]="point">{{point}}</option>
+                </select>
+                <label>Round 1</label>
+            </div>
+            <div class="input-field  col s6">
+                <select name="round-two-points" [(ngModel)]="league.points['two']" materialize="material_select"
+                        [materializeSelectOptions]="points">
+                    <option value="" disabled selected>Correct Pick</option>
+                    <option *ngFor="let point of points" [value]="point">{{point}}</option>
+                </select>
+                <label>Round 2</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field  col s6">
+                <select name="round-three-points" [(ngModel)]="league.points['three']" materialize="material_select"
+                        [materializeSelectOptions]="points">
+                    <option value="" disabled selected>Correct Pick</option>
+                    <option *ngFor="let point of points" [value]="point">{{point}}</option>
+                </select>
+                <label>Round 3</label>
+            </div>
+            <div class="input-field col s6">
+                <select name="round-four-points" [(ngModel)]="league.points['four']" materialize="material_select"
+                        [materializeSelectOptions]="points">
+                    <option value="" disabled selected>Correct Pick</option>
+                    <option *ngFor="let point of points" [value]="point">{{point}}</option>
+                </select>
+                <label>Round 4</label>
+            </div>
+        </div>
+        <div class="row">
+            <h4>Members</h4>
+        </div>
+        <ul class="collection">
+            <li class="collection-item" *ngFor="let user of users; let i = index;">
+                <input type="checkbox" id="test{{i}}" [checked]="isMember(user)" (click)="member(user)"/>
+                <label for="test{{i}}">{{user.first}} {{user.last}}</label>
+            </li>
+        </ul>
+
+        <button class="btn waves-effect waves-light" type="submit" name="action">{{!league._id ? 'Create' : 'Update'}} League</button>
+        <a class="btn-flat red-text" *ngIf="league._id" (click)="delete(league)">Delete</a>
+    </form>
+</div>

@@ -1,0 +1,28 @@
+<div class="row">
+    <form class="col s12" (ngSubmit)="save()" #userForm="ngForm">
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="first-name" name="first" type="text" class="validate" required [(ngModel)]="user.first">
+                <label for="first-name">First Name</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="last-name" type="text" class="validate" name="last"  required [(ngModel)]="user.last">
+                <label for="last-name">Last Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="email" type="email" class="validate" name="email" required [(ngModel)]="user.email">
+                <label for="email">Email</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="email" type="password" class="validate" name="password" [required]="!user._id" [(ngModel)]="user.password">
+                <label for="email">Password</label>
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">{{!user._id ? 'Create' : 'Update'}} User</button>
+        <a class="btn-flat red-text" *ngIf="user._id" (click)="delete(user)">Delete</a>
+    </form>
+</div>
