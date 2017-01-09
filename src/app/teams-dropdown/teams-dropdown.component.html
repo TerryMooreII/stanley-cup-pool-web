@@ -1,0 +1,19 @@
+
+<!--<div  href="#" data-activates="teams" materialize="dropdown" class="team-logo">-->
+    <!--<span *ngIf="!selected">Select Team</span>-->
+    <!--<img class="team-logo" *ngIf="selected"[src]="domSanitizationService.bypassSecurityTrustResourceUrl(selected?.image)" alt="{{selected?.name}}">-->
+<!--</div>-->
+
+<!--&lt;!&ndash; Dropdown Structure &ndash;&gt;-->
+<!--<ul id="teams" class="dropdown-content">-->
+    <!--<li *ngFor="let team of teams" (click)="select(team)">-->
+        <!--<img class="team-logo" [src]="domSanitizationService.bypassSecurityTrustResourceUrl(team.image)" alt="{{team.name}}">-->
+    <!--</li>-->
+<!--</ul>-->
+Select
+<select class="icons" [(ngModel)]="teams" name="selectedOption" materialize="material_select" [materializeSelectOptions]="teams">
+
+    <option class="left" *ngFor="let team of teams" [value]="team" [attr.data-icon]="team.image">{{team.name}}</option>
+
+
+</select>

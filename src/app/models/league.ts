@@ -13,10 +13,10 @@ export class League {
             this.year = new Date().getFullYear();
             this.members = [];
             this.points = {};
-            this.points['one'] = 2;
-            this.points['two'] = 4;
-            this.points['three'] = 8;
-            this.points['four'] = 16;
+            this.points.one = 2;
+            this.points.two = 4;
+            this.points.three = 8;
+            this.points.four = 16;
             return;
         }
 

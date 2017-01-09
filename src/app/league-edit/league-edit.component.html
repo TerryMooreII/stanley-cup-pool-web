@@ -22,17 +22,15 @@
         </div>
         <div class="row">
             <div class="input-field  col s6">
-                <select name="round-one-points" [(ngModel)]="league.points['one']" materialize="material_select"
+                <select name="round-one-points" [(ngModel)]="league.points.one" materialize="material_select"
                         [materializeSelectOptions]="points">
-                    <option value="" disabled selected>Correct Pick</option>
                     <option *ngFor="let point of points" [value]="point">{{point}}</option>
                 </select>
                 <label>Round 1</label>
             </div>
             <div class="input-field  col s6">
-                <select name="round-two-points" [(ngModel)]="league.points['two']" materialize="material_select"
+                <select name="round-two-points" [(ngModel)]="league.points.two" materialize="material_select"
                         [materializeSelectOptions]="points">
-                    <option value="" disabled selected>Correct Pick</option>
                     <option *ngFor="let point of points" [value]="point">{{point}}</option>
                 </select>
                 <label>Round 2</label>
@@ -40,17 +38,15 @@
         </div>
         <div class="row">
             <div class="input-field  col s6">
-                <select name="round-three-points" [(ngModel)]="league.points['three']" materialize="material_select"
+                <select name="round-three-points" [(ngModel)]="league.points.three" materialize="material_select"
                         [materializeSelectOptions]="points">
-                    <option value="" disabled selected>Correct Pick</option>
                     <option *ngFor="let point of points" [value]="point">{{point}}</option>
                 </select>
                 <label>Round 3</label>
             </div>
             <div class="input-field col s6">
-                <select name="round-four-points" [(ngModel)]="league.points['four']" materialize="material_select"
+                <select name="round-four-points" [(ngModel)]="league.points.four" materialize="material_select"
                         [materializeSelectOptions]="points">
-                    <option value="" disabled selected>Correct Pick</option>
                     <option *ngFor="let point of points" [value]="point">{{point}}</option>
                 </select>
                 <label>Round 4</label>

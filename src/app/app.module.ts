@@ -21,6 +21,9 @@ import { LeagueEditComponent } from './league-edit/league-edit.component';
 import {UserService} from "./services/user/user.service";
 import { UserListComponent } from './user-list/user-list.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { BracketAdminComponent } from './bracket-admin/bracket-admin.component';
+import { BracketComponent } from './bracket/bracket.component';
+import { TeamsDropdownComponent } from './teams-dropdown/teams-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     LeagueListComponent,
     LeagueEditComponent,
     UserListComponent,
-    UserEditComponent
+    UserEditComponent,
+    BracketAdminComponent,
+    BracketComponent,
+    TeamsDropdownComponent
   ],
   imports: [
     BrowserModule,
