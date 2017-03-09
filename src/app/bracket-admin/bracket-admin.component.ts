@@ -1,15 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'scp-bracket-admin',
-  templateUrl: './bracket-admin.component.html',
-  styleUrls: ['./bracket-admin.component.less']
+    selector: 'scp-bracket-admin',
+    templateUrl: './bracket-admin.component.html',
+    styleUrls: ['./bracket-admin.component.less']
 })
 export class BracketAdminComponent implements OnInit {
+    bracket: any;
 
-  constructor() { }
+    constructor() {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+
+        this.bracket = {
+            year: 2017,
+            playoffs: {
+                eastern: {
+                    one: {
+                        team: {
+                            shortName: 'Ottawa'
+                        },
+                        wins: {}
+                    }
+                }
+            }
+        }
+    }
 
 }
